@@ -22,3 +22,9 @@ The complete run finishes successfully on the actual hosted DamnPDFs application
 An earlier verifier expected the PDFium rotation enum to be degrees. That assertion was incorrect: enum `1` is a quarter turn. Its session also clears/revokes successfully; the corrected complete run passes. A Windows module-import path error was corrected in the private verification harness before pairing. Neither required a plugin runtime change.
 
 The bridge requires a connected browser. This release does not certify unattended operation, every arbitrary document, all physical devices or default Public-directory approval. GitHub Actions runs the cold package tests and validation on Linux/Node 22. A new Codex conversation loads newly installed skills/tools.
+
+## Directory evaluation container — 15 October 2026
+
+The root Dockerfile provides the public MCP source and its schema snapshot for directory introspection. It runs as the non-root `node` user. The container smoke check starts it with no network, a read-only filesystem and all Linux capabilities dropped, completes the MCP initialization handshake and verifies all 84 tool definitions. It does not connect a browser, upload files or claim processing coverage from an offline handshake.
+
+Both the package and container jobs pass in [GitHub Actions run 38619767983](https://github.com/SouravBeraAkaSpeed/damnpdfs-codex-plugin/actions/runs/38619767983). The preceding container check caught a missing catalog copy in the Docker context; commit `be781738e62b672a8675cf1e46eb2e50a37d2d3d` fixes it. These container and documentation additions do not change the version 1.0.0 ZIP's runtime. Directory review and curated marketplace acceptance remain external decisions.
