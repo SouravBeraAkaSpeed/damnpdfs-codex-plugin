@@ -50,7 +50,11 @@ Session credentials stay in bridge process memory. A session initially lasts two
 - **Retention:** browser document copies at most four hours; temporary cloud copies at most one hour or earlier acknowledged cleanup. User-saved downloads remain under user control. The bridge adds no analytics, credentials on disk, scheduled visits, advertisements or background browsing. Website measurement is described in its [privacy policy](https://damnpdfs.com/privacy).
 - **Limitations:** a connected tab is required, one operation runs at a time, originals are preserved, scanned text may need OCR, missing fonts may affect Office conversions, and a visible PDF signature is not certificate signing. Check actual outputs and warnings.
 
-More details: [plugin setup](plugins/damnpdfs/README.md), [privacy](https://damnpdfs.com/privacy), [terms](https://damnpdfs.com/terms), [help/contact](https://damnpdfs.com/contact), [tool guides](https://damnpdfs.com/guides).
+More details: [website installation guide](https://damnpdfs.com/integrations/codex), [plugin setup](plugins/damnpdfs/README.md), [privacy](https://damnpdfs.com/privacy), [terms](https://damnpdfs.com/terms), [help/contact](https://damnpdfs.com/contact), [tool guides](https://damnpdfs.com/guides).
+
+## Directory evaluation
+
+The root Dockerfile provides a non-root Node.js 22 stdio entry point for MCP introspection. It contains only the public bridge and catalog; no credentials, document fixtures or product source are included. Build with `docker build -t damnpdfs-mcp-test .` and run `node scripts/verify-container.mjs` to verify startup with no network, read-only storage and dropped capabilities. CI performs this check on Linux. Actual document tasks still require a connected approved browser workspace and network access; an evaluator's tool-list check does not certify every document operation.
 
 ## Inspect, test and update
 

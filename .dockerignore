@@ -1,0 +1,5 @@
+*
+!plugins/
+!plugins/damnpdfs/
+!plugins/damnpdfs/mcp/
+!plugins/damnpdfs/mcp/**
