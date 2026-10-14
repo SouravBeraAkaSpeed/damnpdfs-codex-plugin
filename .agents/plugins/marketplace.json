@@ -1,0 +1,10 @@
+{
+  "name": "damnpdfs",
+  "interface": {"displayName": "DamnPDFs"},
+  "plugins": [{
+    "name": "damnpdfs",
+    "source": {"source": "local", "path": "./plugins/damnpdfs"},
+    "policy": {"installation": "AVAILABLE", "authentication": "ON_USE"},
+    "category": "Productivity"
+  }]
+}
