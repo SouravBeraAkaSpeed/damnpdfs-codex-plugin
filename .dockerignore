@@ -3,3 +3,5 @@
 !plugins/damnpdfs/
 !plugins/damnpdfs/mcp/
 !plugins/damnpdfs/mcp/**
+!plugins/damnpdfs/assets/
+!plugins/damnpdfs/assets/catalog.json
